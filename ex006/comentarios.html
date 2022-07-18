@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentários</title>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1>Comentários</h1>
+    <h2 id="myH"></h2>
+    <p id="myP"></p>
+
+    <p id="myOp"></p>
+
+    <p>238,85 + 74,58 + 54,89 = <span id="conta"></span></p>
+
+    <script>
+        /* 
+            O código que se segue altera o texto de
+            
+        */
+
+        // Alterando o texto do título
+        document.getElementById('myH').innerHTML = "O importante";
+        // Alterando o texto do parágrafo
+        document.getElementById('myP').innerHTML = "está nos comentários";
+
+        var x = 5;      // Declara x, e lhe dá o valor de 5
+        var y = x + 2;  // Declara y, dá o valor de x + 2
+
+        // Exibe y em myOp
+        document.getElementById('myOp').innerHTML = y;
+
+        var result = 238.85 + 74.58 + 54.89;
+        document.getElementById('conta').innerHTML = result;
+    </script>
+</body>
+</html>

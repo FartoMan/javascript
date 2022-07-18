@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aritmética</title>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1>Operações Aritméticas</h1>
+    <p id="demo1"></p>
+    <p>A <span id="oper">operação</span> de <span id="x">x</span> e <span id="y">y</span> é <span id="z">z</span>.</p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+
+        let x = 100 + 50;
+        let y = (100 + 50) * 2;
+        let z = y * x;
+        
+        
+        document.getElementById('demo1').innerHTML = x + ' ' + y + ' ' + z;
+        
+        if(z == (y + x)) {
+            document.getElementById('oper').innerHTML = "soma";
+        }
+        if(z == (y - x)) {
+            document.getElementById('oper').innerHTML = "subtração";
+        }
+        if(z == (y / x)) {
+            document.getElementById('oper').innerHTML = "divisão";
+        }
+        if(z == (y * x)) {
+            document.getElementById('oper').innerHTML = "multiplicação";
+        }
+        document.getElementById('x').innerText = x;
+        document.getElementById('y').innerText = y;
+        document.getElementById('z').innerText = z;
+        
+        h = 30 * 100 + 50;
+        j = 50 + 30;
+        k = 80 * 100;
+        l = (50 + 30) * 100;
+        document.getElementById('demo3').innerHTML = h + ' ' + j + ' ' + k + ' ' + l;
+
+    </script>
+</body>
+</html>

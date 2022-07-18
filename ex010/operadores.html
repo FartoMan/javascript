@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores</title>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1>Operadores <abbr title="JavaScript">JS</abbr></h1>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+        let x = 5 + 5;
+        y = 10 + 10;
+        z = x * y;
+        
+        document.getElementById('demo1').innerHTML = x + ' ' + y + ' ' + z;
+        
+        j = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9;
+        x += 3;
+        y -= 5;
+                
+        document.getElementById('demo2').innerHTML = j + ' ' + x + ' ' + y;
+
+        let pName = "João";
+        pName += "Doritos";
+        document.getElementById('demo3').innerHTML = pName;
+
+        let pFrase = "Bom dia, ";
+        pFrase += "flor do dia.";
+        document.getElementById('demo4').innerHTML = pFrase;        
+
+    </script>
+</body>
+</html>

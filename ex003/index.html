@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações em JS</title>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<h1><abbr title="outputs">Saídas</abbr> com <abbr title="JavaScript">JS</abbr></h1>
+<body onload="carregou()">
+
+    <p>5 + 5 = <span id="soma"></span></p>
+    <button type="button" onclick="soma()">Somar</button>
+
+    <p style="color: red; font-weight: bolder;">Não clique neste botão!</p>
+    <button type="button" onclick="naoFazer()" style="color: red">Não clique!</button>
+
+    <p>JS também exibe alertas!</p>
+
+    <p>Existe uma mensagem no console. Aperte F12 e vá em "Console".</p>
+
+    <p>Print em JS é literalmente para imprimir. Ele irá imprimir a página.</p>
+    <button onclick="window.print()">Imprimir página</button>
+
+    <script>
+        function soma() {
+            document.getElementById('soma').innerHTML = 5 + 5;
+        }
+
+        /* Nunca usar document.write após o documento ser carregado!
+            document.write é ótimo para fazer testes. */
+        function naoFazer() {
+            document.write("Eu disse!");
+        }
+
+        function carregou() {
+            alert("Esta página testa algumas saídas com JS");
+        }
+
+        console.log(6+5);
+    </script>
+</body>
+</html>

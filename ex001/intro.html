@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução JS</title>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1>Introdução</h1>
+
+    <h2>JS muda o conteúdo de um elemento</h2>
+    <p id="maldicao">Começando aqui, matando a maldição. <br>Clique no botão!!</p>
+    <button type="button" onclick="document.getElementById('maldicao').innerHTML = 'Hello, World! Estou usando Java Script!'">Clique aqui!</button>
+
+    <h2>JS muda o <abbr title="source/fonte">src</abbr></h2>
+    <button type="button" onclick="document.getElementById('imagem').src='imagens/wusang-peq.png'">Wu Sang</button>
+    <img id="imagem" src="imagens/teros-pequeno.png" alt="wusang joinha" style="height: 150px;">
+    <button type="button" onclick="document.getElementById('imagem').src='imagens/teros-pequeno.png'">Teros</button>
+
+    <h2>JS muda o estilo de um elemento</h2>
+    <p id="corTexto" style="background-color: blue; color: white;">Clique no botão para mudar a cor de fundo do texto.</p>
+    <button type="button" onclick="document.getElementById('corTexto').style.backgroundColor='red'">Mudar cor</button>
+    <button type="button" onclick="document.getElementById('corTexto').style.fontSize='25px'">Mudar fonte</button>
+
+    <h2>JS pode <abbr title="mudando o display">esconder</abbr> elementos</h2>
+    <p id="esconde">Este elemento será escondendido ao clicar no botão.</p>
+    <button type="button" onclick="document.getElementById('esconde').style.display='none'">Esconder</button>
+    <button type="button" onclick="document.getElementById('esconde').style.display='block'">Mostrar</button>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1><abbr title="Funções">Functions</abbr></h1>
+
+    <p id="demo1">Função que retorna multiplicação</p>
+    <p id="demo2">Função que retorna divisão</p>
+    <p id="demo3">Função que retorna a transformação de dois valores</p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+
+    <script>
+        /*
+        Essa função retorna o resultado de uma operação entre dois valores
+        */
+        function myFunction1(p1, p2) {
+            return p1 * p2;
+        }
+        document.getElementById('demo1').innerHTML = myFunction1(4, 6);
+
+        /*
+        Função de divisão
+        */
+        function myFunction2(a, b) {
+            return a / b;
+        }
+        var x = myFunction2(20, 3);
+        document.getElementById('demo2').innerHTML = x;
+
+        /*
+        Função para transformar temperatura
+        */
+        function toCelsius(f) {
+            return (f-32) * (5/9); // Fórmula da tra
+        }
+        let i = 50; // Armazena o valor
+        let h = toCelsius(i); // Armazena o valor resultado da Função
+        let text = "A temperatura " + i + " Fahrenheit é igual a " + h + " graus Celsius."; // Armazena o texto
+        // Exibição das funções
+        document.getElementById('demo3').innerHTML = toCelsius(32); // Retorna o resultado da função
+        document.getElementById('demo4').innerHTML = toCelsius; // Retorna o objeto da função
+        document.getElementById('demo5').innerHTML = text; 
+
+        /*
+        Variáveis dentro de função só são acessadas dentro da função
+        */
+        myFunction();
+        function myFunction() {
+            let carName = "Volvo";
+            document.getElementById('demo6').innerHTML = typeof carName + " " + carName;
+        }
+        document.getElementById('demo7').innerHTML = typeof carName;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Const</title>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1>Declarações com Const</h1>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+        const x = 10;
+        document.getElementById('demo1').innerHTML = x;
+        
+        const cars = ["Fiat", "VW", "Honda"]; // Declaração de uma array
+
+        cars[0] = "Ford"; // Alterar o valor de um elemento da array
+
+        cars.push("Audi"); // Adicionar um elemento
+
+        document.getElementById('demo2').innerHTML = cars;
+
+        /* const marca = "Honda";
+           const modelo = "CG125";
+           const cor = "vermelha"; */
+
+        const bike = {type:"Honda", model:"CG125", color:"red"};
+        document.getElementById('demo3').innerHTML = bike.type + ', ' + bike.model + ', ' + bike.color;
+
+        bike.color = "black";
+        document.getElementById('demo4').innerHTML = "A cor da moto mudou, agora é " + bike.color;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events JS</title>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1>Eventos em <abbr title="JavaScript">JS</abbr></h1>
+
+    <button onclick="document.getElementById('demo1').innerHTML = Date()">The time is?</button>
+
+    <p id="demo1"></p>
+
+    <button onclick="this.innerHTML=Date()">Que horas são?</button>
+    <br>
+    <button onclick="displayDate()">Clique</button>
+    <p id="demo2"></p>
+
+    <p id="demo3" onmouseover="trocarTexto()" style="width: 200px;">PASSE O MOUSE AQUI!</p>
+
+    <button onclick="troca()">Clique para alterar o texto abaixo</button>
+    <p id="demo4"></p>
+
+    <script>
+        function displayDate() {
+            document.getElementById('demo2').innerHTML = Date();
+        }
+
+        var texto1 = "PASSE O MOUSE AQUI";
+        var texto2 = "MUDEI!";
+        document.getElementById('demo3').innerHTML = texto1;
+        function trocarTexto() {
+            document.getElementById('demo3').innerHTML = texto2;
+        }
+
+        let x = 1;
+        let y = 2;
+        let z = 3;
+        document.getElementById('demo4').innerHTML = x
+        function troca() {
+            var mensagem = document.getElementById('demo4').value;
+            if (mensagem == x) {
+                decument.getElementById('demo4').innerHTML = y;
+            }
+            else if (mensagem == y) {
+                document.getElementById('demo4').innerHTML = z;
+            }
+            else if (mensagem == z) {
+                document.getElementById('demo4').innerHTML = x;
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declarações e variáveis</title>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1><abbr title="statements">Declarações</abbr> em <abbr title="JavaScript">JS</abbr></h1>
+
+    <h2>Declarações e variáveis</h2>
+
+    <p>Uma linguagem passa declarações para que o computador execute-as em algum programa.</p>
+    <p>No caso do HTML, o que programa a executar essas declarações serão os navegadores.</p>
+
+    <p id="soma"></p>
+
+    <p id="texto"></p>
+
+    <p>Cada declaração é lida na ordem em que é escrita no código.</p>
+
+    <p id="ordem"></p>
+
+    <p>Um bloco de declarações feito em um único bloco:</p>
+    <div style="width: 300px; border: 1px solid black; padding: 5px;">
+        <p id="oi1">----</p>
+        <p id="oi2">---- </p>
+        <button type="button" onclick="myFunction()">Oi</button>
+    </div>
+
+    <script>
+        let a, b, c;
+        a = 1; b = 2; c = a + b;
+
+        document.getElementById('ordem').innerHTML = a + " " + b + " " + c;
+
+        let x, y, z;
+        x = 5;
+        y = 6;
+        z = x + y;
+
+        document.getElementById('soma').innerHTML = "O valor de z é " + z + ".";
+
+        document.getElementById('texto').innerHTML = "Utilizando JS para exibir esse texto."
+
+        function myFunction() {
+            document.getElementById('oi1').innerHTML = "Oi, Charley!";
+            document.getElementById('oi2').innerHTML = "Como vai?";
+        }
+    </script>
+    
+</body>
+</html>

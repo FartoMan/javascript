@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            columns: 2;
+            width: 40%;
+            border: 1px solid black;
+        }
+    </style>
+    <title>Sintáxe</title>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1>Sintáxe <abbr title="JavaScript">JS</abbr></h1>
+
+    <h2>Variáveis</h2>
+    <div>
+        <h3>Criar variáveis</h3>
+        <code>
+            <p>var x;</p>
+            <p>let y;</p>
+            <p>x -> <span id="xVar1"></span></p>
+            <p>y -> <span id="yVar1"></span></p>
+        </code>
+        <br>
+
+        <h3>Usar variáveis</h3>
+        <code>
+            <p>x = 5;</p>
+            <p>y = 6;</p>
+            <p>let z = x + y;</p>
+            <p>x -> <span id="xVar2"></span> </p>
+            <p>y -> <span id="yVar2"></span> </p>
+            <p>z -> <span id="zVar"></span> </p>
+        </code>
+    </div>
+
+    <h2>Valores literais</h2>
+    <div>
+        <h3>Números</h3>
+        <p id="numLit"></p>
+        <p id="numLit2"></p>
+        <h3>Texto</h3>
+        <p id="textLit"></p>
+        <br>
+    </div>
+
+    <h2>Operadores e Expressões</h2>
+    <div>
+        <h3 style="text-shadow: 0px 0px 2px black;">+ - * /</h3>
+        <p>Feito de forma literal: <span id="opLit"></span></p>
+        <p>Com variáveis: <span id="opVar"></span></p>
+        <p>Literal mais variável: <span id="opLitVar"></span></p>
+        <p>Combinando texto: <span id="opText"></span></p>
+    </div>
+
+    <script>
+        // Declarar variáveis
+        var x;
+        let y;
+        document.getElementById('xVar1').innerHTML = x;
+        document.getElementById('yVar1').innerHTML = y;
+
+        // Atribuir valores/dados às variáveis
+        x = 5;
+        y = 6;
+        let z = x + y;
+
+        // Exibir as variáveis
+        document.getElementById('xVar2').innerHTML = x;
+        document.getElementById('yVar2').innerHTML = y;
+        document.getElementById('zVar').innerHTML = z;
+
+        // Valores Literais / Definidos no próprio código, escritos literalmente
+        document.getElementById('numLit').innerHTML = 10.50;
+        document.getElementById('numLit2').innerHTML = 2000;
+        document.getElementById('textLit').innerHTML = "João";
+
+        // Operadores e Expressões
+        document.getElementById('opLit').innerHTML = (5 + 6) * (10 / 2);
+        document.getElementById('opVar').innerHTML = x - y;
+        document.getElementById('opLitVar').innerHTML = x + 10;
+        document.getElementById('opText').innerHTML = "João" + " " + "Maria";
+
+    </script>
+
+</body>
+</html>

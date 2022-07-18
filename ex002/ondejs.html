@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function myFunction() {
+            document.getElementById('texto').innerHTML = "O texto foi alterado por uma função que está no head.";
+        }
+    </script>
+    <title>Onde Colocar o JS</title>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1>Onde colocamos o código <abbr title="JavaScript">JS</abbr>?</h1>
+    <h2>As funções vão entre &lt;script&gt; e &lt;/script&gt;</h2>
+
+    <p id="texto"></p>
+
+    <button type="button" onclick="myFunction()">Mudar texto</button>
+
+    <script>
+        document.getElementById('texto').innerHTML = "O script está no body.";
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis JS</title>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1>Estudando Variáveis em <abbr title="JavaScript">JS</abbr></h1>
+    <h2>Declarando</h2>
+    <p>Todos os parágrafos a seguir são exibidos através de <abbr title="JavaScript">JS</abbr>.</p>
+    <code>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+    </code>
+
+    <h3>História</h3>
+    <p><span id="comprador"></span> comprou o carro <span id="veículo"></span> por <span id="valor"></span></p>
+    <p id="valor"></p>
+    
+    <script>
+        var x = 1;
+        let y = 3;
+        const z = 4;
+        k = 5;
+
+        document.getElementById('demo').innerHTML = "x y z k";
+        document.getElementById('demo1').innerHTML = x + " " + y + " " + z + " " + k;
+        document.getElementById('demo2').innerHTML = "var, let, const, nada";
+
+        var nome = "Marcos José", carro = "Fiat";
+        var e = "asdf";
+        document.getElementById('comprador').innerHTML = nome;
+        document.getelementById('veiculo').innerHTML = carro;
+        document.getElementById('valor').innerHTML = e;
+
+    </script>
+</body>
+</html>

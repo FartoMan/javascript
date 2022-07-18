@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .fiat {
+            display: inline-block;
+        }
+
+        .ford {
+            display: inline-block;
+        }
+
+        .carros {
+            width: 200px;
+            height: auto;
+            border: 1px solid black;
+            padding: 0 5px;
+        }
+
+        header h1 {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        header h2 {
+            text-align: left;
+            padding: 15px 30px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <title>Obejects JS</title>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<header>
+    <h1>Exercício JS W3School</h1>
+    <h2><abbr title="Objetos em JavaScript">Objects JS</abbr></h2>
+</header>
+<body>
+    <div class="fiat carros">
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+    </div>
+
+    <div class="ford carros">
+        <p id="demo5"></p>
+        <p id="demo6"></p>
+        <p id="demo7"></p>
+        <p id="demo8"></p>
+    </div>
+
+    <script>
+        let car = "Fiat"; // Variável
+        const cCar = { // Objeto
+            type: "Fiat", // cCar.type
+            model: "500", // cCar.model
+            color: "white" // cCar.color
+        };
+        const person = { // Objeto
+            firstName: "João", // person["firstName"]
+            lastName: "Silva", // person["lastName"]
+            age: 50, // person["age"]
+            eyeColor: "azul", // person["eyeColor"]
+
+            fullName: function () { // Método nome completo
+                return this.firstName + " " + this.lastName;
+            } // person.fullName()
+        };
+
+        document.getElementById('demo1').innerHTML = car;
+        document.getElementById('demo2').innerHTML = cCar.type + " " + cCar.model + " " + cCar.color;
+        document.getElementById('demo3').innerHTML = person["firstName"] + " " + person["lastName"] + " " + person["age"] + " " + person["eyeColor"] + " " + person.fullName();
+
+        /* EVITAR CRIAR string, number, boolean COMO OBJETOS */
+        x = new String("Olá");
+        y = new Number(15);
+        z = new Boolean(true);
+        document.getElementById("demo4").innerHTML = x + " " + y + " " + z;
+
+        const cFord = {
+            type: "Ford",
+            model: "Fusion",
+            color: "black",
+            fullCar: function() {
+                return this.type + " " + this.model + " " + this.color;
+            }
+        }
+        document.getElementById('demo5').innerHTML = cFord.type;
+        document.getElementById('demo6').innerHTML = cFord.model;
+        document.getElementById('demo7').innerHTML = cFord.color;
+        document.getElementById('demo8').innerHTML = cFord.fullCar();
+        
+    </script>
+</body>
+</html>
