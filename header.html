@@ -92,10 +92,52 @@
             }
 
             to {
-                width: 0%;
-                height: 100%;
+                width: 100%;
+                height: 0%;
                 animation-play-state: paused;
             }
+        }
+
+        abbr {
+            text-decoration: none;
+        }
+
+        li.dropdown {
+            display: inline-block;
+            background-color: #059862;
+        }
+
+        .dropdown:hover {
+            background-color: #02e692;
+            transition: .75s;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            bottom: 30px;
+            z-index: 1;
+
+            background-color: #00e792be;
+            box-shadow: 0px 0px 3px black;
+            border-radius: 3px;
+        }
+
+        .dropdown-content a {
+            display: block;
+            text-align: left;
+            margin: 3px 3px;
+
+            background-color: #02e692;
+            box-shadow: 0 0 2px black;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #059862;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
     </style>
 </head>
@@ -107,22 +149,29 @@
     </header>
     <nav>
         <ul>
-            <li><a href="ex001/intro.html" target="_parent">Introdução</a></li>
-            <li><a href="ex002/ondejs.html" target="_parent">Onde JS</a></li>
-            <li><a href="ex003/index.html" target="_parent">Saídas JS</a></li>
-            <li><a href="ex004/declaracoes.html" target="_parent">Declarações</a></li>
-            <li><a href="ex005/sintax.html" target="_parent">Sintaxe</a></li>
-            <li><a href="ex006/comentarios.html" target="_parent">Comentários</a></li>
-            <li><a href="ex007/variaveis.html" target="_parent">Variáveis</a></li>
-            <li><a href="ex008/let.html" target="_parent">Let</a></li>
-            <li><a href="ex009/const.html" target="_parent">Const</a></li>
-            <li><a href="ex010/operadores.html" target="_parent">Operadores</a></li>
-            <li><a href="ex011/aritmetica.html" target="_parent">Aritmética</a></li>
-            <li><a href="ex012/atribuicao.html" target="_parent">Atribuição</a></li>
-            <li><a href="ex013/datatype.html" target="_parent">Data Type</a></li>
-            <li><a href="ex014/functions.html" target="_parent">Funções</a></li>
-            <li><a href="ex015/objects.html" target="_parent">Objetos</a></li>
-            <li><a href="ex016/events.html" target="_parent">Eventos</a></li>
+            <li><a href="ex001/intro.html" target="_parent"><abbr title="ex001">Introdução</abbr></a></li>
+            <li><a href="ex002/ondejs.html" target="_parent"><abbr title="ex002">Onde JS</abbr></a></li>
+            <li><a href="ex003/index.html" target="_parent"><abbr title="ex003">Saídas JS</abbr></a></li>
+            <li><a href="ex004/declaracoes.html" target="_parent"><abbr title="ex004">Declarações</abbr></a></li>
+            <li><a href="ex005/sintax.html" target="_parent"><abbr title="ex005">Sintaxe</abbr></a></li>
+            <li><a href="ex006/comentarios.html" target="_parent"><abbr title="ex006">Comentários</abbr></a></li>
+            <li><a href="ex007/variaveis.html" target="_parent"><abbr title="ex007">Variáveis</abbr></a></li>
+            <li><a href="ex008/let.html" target="_parent"><abbr title="ex008">Let</abbr></a></li>
+            <li><a href="ex009/const.html" target="_parent"><abbr title="ex009">Const</abbr></a></li>
+            <li><a href="ex010/operadores.html" target="_parent"><abbr title="ex010">Operadores</abbr></a></li>
+            <li><a href="ex011/aritmetica.html" target="_parent"><abbr title="ex011">Aritmética</abbr></a></li>
+            <li><a href="ex012/atribuicao.html" target="_parent"><abbr title="ex012">Atribuição</abbr></a></li>
+            <li><a href="ex013/datatype.html" target="_parent"><abbr title="ex013">Data Type</abbr></a></li>
+            <li><a href="ex014/functions.html" target="_parent"><abbr title="ex014">Funções</abbr></a></li>
+            <li><a href="ex015/objects.html" target="_parent"><abbr title="ex015">Objetos</abbr></a></li>
+            <li><a href="ex016/events.html" target="_parent"><abbr title="ex016">Eventos</abbr></a></li>
+            <li class="dropdown"><a class="dropbtn" href="ex017/strings.html" target="_parent"><abbr title="ex017">Strings</abbr></a>
+            <div class="dropdown-content">
+                <a href="ex017/stringmethods.html" target="_parent">String Methods</a>
+                <a href="ex017/stringsearch.html" target="_parent">String Search</a>
+                <a href="ex017/stringtemplate.html" target="_parent">String Template</a>
+            </div>
+        </li>
         </ul>
     </nav>
 </body>
