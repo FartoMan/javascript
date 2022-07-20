@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+    <style>
+        em {
+            background-color: rgba(0, 194, 0, 0.274);
+        }
+
+        .cx {
+            float: left;
+            width: 300px;
+            padding: 5px;
+            margin: 0px 3px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1>Strings em <abbr title="JavaScript">JS</abbr></h1>
+
+    <div class="cx">
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <p>R: <span id="demo5"></span></p>
+        <button onclick="myFunction()">Mudar frase</button>
+        <p id="demo7"></p>
+        <p id="demo8"></p>
+    </div>
+
+    <div class="cx">
+        <p id="demo9"></p>
+        <p id="demo10"></p>
+        <p id="demo11"></p>
+        <p id="demo12"></p>
+    </div>
+
+    <script>
+        let nome = "João Tadeu"; // Uma string
+        document.getElementById('demo1').innerHTML = nome;
+
+        let carName1 = "Honda Civic"; // Áspas duplas
+        let carName2 = 'Ford Fusion'; // Áspas simples
+        document.getElementById('demo2').innerHTML = carName1 + ", " + carName2;
+
+        let texto1 = "It\'s all right."; // Uso de áspas dupla
+        let texto2 = "É sobre 'isso'..."; // Uso de áspas simples dentro de áspas dupla
+        let texto3 = 'E tá tudo "bem"...'; // Uso de áspas dupla dentro de áspas simples
+        document.getElementById('demo3').innerHTML = texto1 + "<br>" + texto2 + "<br>" + texto3;
+
+        // Declarar uma variável já modificando um elemento
+        let frase = document.getElementById('demo4').innerHTML = "Quantas letras tem essa frase?";
+        let nLetras = frase.length; // Checa quantos caracteres há na string
+        document.getElementById('demo5').innerHTML = nLetras;
+
+        /* Função para alterar o texto e a contagem de letras de duas variáveis */
+        let state = 2;
+        function myFunction() {
+            if(state == 2) {
+                document.getElementById('demo4').innerHTML = texto1;
+                nLetras = texto1.length;
+                document.getElementById('demo5').innerHTML = nLetras;
+                state = 1;
+            } else {
+                document.getElementById('demo4').innerHTML = frase;
+                nLetras = frase.length;
+                document.getElementById('demo5').innerHTML = nLetras;
+                state = 2;
+            }
+        }
+
+        /* É possível utilizar os elementos de HTML para usar a CSS */
+        let texto4 = "Nós somos os chamados \"Vikings\" do \'nortche\'."; // String
+        let texto5 = "O caractere <strong>\\</strong> é chamado <em>backslash</em>."; // String
+        document.getElementById('demo7').innerHTML = texto4;
+        document.getElementById('demo8').innerHTML = texto5;
+
+        let nome1 = "Marquinho da Padaria"; // Uma String
+        let nome2 = new String("Marquinho da Padaria"); // Um objeto
+        document.getElementById('demo9').innerHTML = nome1 + "<br>" + nome2;
+        document.getElementById('demo10').innerHTML = typeof nome1 + "<br>" + typeof nome2;
+        document.getElementById('demo11').innerHTML = (nome1===nome2); // Não são iguais
+        document.getElementById('demo12').innerHTML = (nome1==nome2); // São iguais
+
+    </script>
+</body>
+</html>
