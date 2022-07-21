@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Search</title>
+    <style>
+        .cx {
+            width: 300px;
+            float: left;
+            border: 1px solid black;
+            padding: 3px;
+            margin: 0 3px;
+        }
+
+        abbr:hover{
+            cursor: help;
+        }
+    </style>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1><abbr title="String Search">Localizar em Strings</abbr> com <abbr title="JavaScript">JS</abbr></h1>
+    <div class="cx">
+        <abbr title="let txt">
+            <p id="demo1"></p>
+        </abbr>
+        <abbr title=".indexOf('falou')">
+            <p id="demo2"></p>
+        </abbr>
+        <abbr title=".lastIndexOf('falou')">
+            <p id="demo3"></p>
+        </abbr>
+        <abbr title=".indexOf('Maria'); if (txt.indexOf('Maria') == -1) { return strSErro; }">
+            <p id="demo4"></p>
+        </abbr>
+        <abbr title=".indexOf('falou', 15)">
+            <p id="demo5"></p>
+        </abbr>
+        <abbr title=".indexOf('falou', 15)">
+            <p id="demo6"></p>
+        </abbr>
+        <abbr title=".search('nada')">
+            <p id="demo7"></p>
+        </abbr>
+        <abbr title=".match('falou')">
+            <p id="demo8"></p>
+        </abbr>
+        <abbr title=".match('falou'); for">
+            <p id="demo9"></p>
+        </abbr>
+        <abbr title=".includes('falou'); if(txt.includes('falou') == true) {...} else {...}">
+            <p id="demo10"></p>
+        </abbr>
+    </div>
+
+    <div class="cx">
+        <abbr title=".startsWith('Maria') .startsWith('João') .startsWith('Marcos')">
+            <p id="demo11"></p>
+        </abbr>
+        <abbr title=".endsWith('nada') .endsWith('.') .endsWith('falou')">
+            <p id="demo12"></p>
+        </abbr>
+        <p id="demo13"></p>
+        <p id="demo14"></p>
+        <p id="demo15"></p>
+        <p id="demo16"></p>
+        <p id="demo17"></p>
+    </div>
+
+    <script>
+        /* JS conta posições apartir do 0 */
+        let txt = "João então falou que não falou nada."
+        let strSError = "Essa palavra não existe no texto."
+        document.getElementById('demo1').innerHTML = txt;
+        document.getElementById('demo2').innerHTML =
+        txt.indexOf('falou'); // Posição da 1ª ocorrencia
+
+        document.getElementById('demo3').innerHTML =
+        txt.lastIndexOf('falou'); // Posição da última
+
+        document.getElementById('demo4').innerHTML =
+        txt.indexOf('Maria'); // "-1" quando não há
+        if (txt.indexOf('Maria') == -1) {
+            document.getElementById('demo4').innerHTML = strSError; // String Search Error
+        }
+
+        document.getElementById('demo5').innerHTML =
+        txt.indexOf('falou', 15); // Busca a partir do 15
+        document.getElementById('demo6').innerHTML =
+        txt.lastIndexOf('falou', 15); // A partir do 15
+
+        document.getElementById('demo7').innerHTML =
+        txt.search('nada'); // Primeira ocorrência
+
+        /* .match transforma em Array */
+        let txtFalou = txt.match(/falou/gi); // g (tudo) i (M m)
+        document.getElementById('demo8').innerHTML =
+        txtFalou; // Repete todas as ocorrências
+
+        /* Quantidade de ocorrencias */
+        let txtMatches = 0;
+        for(let i = 0; i < txtFalou.length; i++) {
+            document.getElementById('demo9').innerHTML = i + 1;
+            txtMatches++; // 0+1 / 1+1 / 2
+        }
+
+        /* .includes retorna true ou false, sendo um boolean */
+        if(txt.includes('falou') == true) { // true / false
+            document.getElementById('demo10').innerHTML =
+            "Contém" + " " + txtMatches;
+        } else {
+            document.getElementById('demo10').innerHTML =
+            "Não contém";
+        }
+        /* .includes('falou', 15) - a partir da posição 15 */
+
+        /* .startsWith também é booleano e case sensitive */
+        document.getElementById('demo11').innerHTML =
+        txt.startsWith('Maria') + " " + // false
+        txt.startsWith('João') + " " + // true
+        txt.startsWith('Marcos') + " "; // false
+
+        /* .endsWith também é booleano e case sensitive*/
+        document.getElementById('demo12').innerHTML =
+        txt.endsWith("nada") + " " + // false
+        txt.endsWith(".") + " " + // true
+        txt.endsWith("falou", 16); // até a posição 16
+        
+    </script>
+</body>
+</html>
