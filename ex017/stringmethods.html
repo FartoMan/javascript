@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+    <style>
+        .cx {
+            float: left;
+            width: 300px;
+            border: 1px solid black;
+            padding: 3px;
+            margin: 0 3px;
+        }
+    </style>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1><abbr title="String Methods">Métodos com Strings</abbr> em <abbr title="JavaScript">JS</abbr></h1>
+
+    <div class="cx">
+        <abbr title="var texto">
+            <p onclick="myFunction1()" id="demo1"></p>
+        </abbr>
+        <abbr title=".length">
+            <p id="demo2"></p>
+        </abbr>
+        <abbr title=".slice(5, 14)">
+            <p id="demo3"></p>
+        </abbr>
+        <abbr title=".slice(-11)">
+            <p id="demo4"></p>
+        </abbr>
+        <abbr title=".substring(5, 14)">
+            <p id="demo5"></p>
+        </abbr>
+        <abbr title=".substr(6, 5)">
+            <p id="demo6"></p>
+        </abbr>
+        <abbr title=".replace('tio', 'cara')">
+            <p id="demo7"></p>
+        </abbr>
+        <abbr title=".replace(/a/g, 'T')">
+            <p id="demo8"></p>
+        </abbr>
+        <abbr title=".toUpperCase()">
+            <p id="demo9"></p>
+        </abbr>
+        <abbr title=".toLowerCase()">
+            <p id="demo10"></p>
+        </abbr>
+    </div>
+
+    <div class="cx">
+        <abbr title=".concat(' ', 'Batata'")>
+            <p id="demo11"></p>
+        </abbr>
+        <abbr title=".trim()">
+            <p id="demo12"></p>
+        </abbr>
+        <p id="demo13"></p>
+        <abbr title=".charAt()">
+            <p id="demo14"></p>
+        </abbr>
+        <abbr title=".charCodeAt">
+            <p id="demo15"></p>
+        </abbr>
+        <abbr title="texto[0]">
+            <p id="demo16"></p>
+        </abbr>
+        <abbr title=".split(',');">
+            <p id="demo17"></p>
+        </abbr>
+        <p id="demo18"></p>
+        <p id="demo19"></p>
+    </div>
+
+
+    <script>
+        let texto = "João morava na casa do tio";
+        document.getElementById('demo1').innerHTML =
+         texto; // Exibe o valor da variável
+
+        document.getElementById('demo2').innerHTML =
+         texto.length; // Conta todos os caracteres
+
+        document.getElementById('demo3').innerHTML = 
+         texto.slice(5, 14); // Exibe entre dois valores
+        document.getElementById('demo4').innerHTML =
+         texto.slice(-11); // Exibe até o final
+        
+        document.getElementById('demo5').innerHTML =
+         texto.substring(5, 14); // Igual .slice
+
+        document.getElementById('demo6').innerHTML =
+         texto.substr(6, 5); // 7 car a partir do 6º
+
+        document.getElementById('demo7').innerHTML =
+         texto.replace("tio", "cara"); // Altera
+        document.getElementById('demo8').innerHTML =
+         texto.replace(/a/g, "i"); // /g muda todos os a
+
+        document.getElementById('demo9').innerHTML =
+         texto.toUpperCase(); // Tudo CAPSLOCK
+        document.getElementById('demo10').innerHTML =
+         texto.toLowerCase(); // Tudo pequeno
+
+        document.getElementById('demo11').innerHTML =
+         texto.concat(" ", "Batata"); // Concatenar
+
+        let texto1 = "   João e Maria   ";
+        let texto2 = texto1.trim(); // Remove espaços laterais
+        document.getElementById('demo12').innerHTML =
+         "Length texto1: " + texto1.length +
+         "<br>Length texto2: " + texto2.length;
+
+        let x = 5;
+        let xis = x.toString(); // Transformar num para string
+        document.getElementById('demo13').innerHTML =
+         "<abbr title='.padStart(6,'0')>" +
+         xis.padStart(6, "0") + "</abbr>" + // Add no início
+         " " + "<abbr title='.padEnd(6, '0')>" + xis.padEnd(6, "0") + "</abbr>"; // Add no final
+
+        document.getElementById('demo14').innerHTML =
+         texto.charAt(0); // Caractere na posição 0
+
+        document.getElementById('demo15').innerHTML =
+         texto.charCodeAt(0); // Unicode caractere
+
+        document.getElementById('demo16').innerHTML =
+         texto[0]; // Caracter na posição 0
+
+        /* Transformando String em Array */
+        let letras = "a,b,c,d,e";
+        const myArray = letras.split(",");
+        document.getElementById('demo17').innerHTML =
+         myArray[3];
+
+        let oi = "Hello";
+        const myArr = oi.split("");
+        oi = "";
+        for (let i = 0; i < myArr.length; i++) {
+            oi += myArr[i] + " ";
+        }
+        document.getElementById('demo18').innerHTML = oi;
+    </script>
+</body>
+</html>
