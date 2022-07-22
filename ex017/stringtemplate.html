@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Template</title>
+    <style>
+        .cx {
+            width: 300px;
+            float: left;
+            border: 1px solid black;
+            padding: 3px;
+            margin: 0 3px;
+        }
+
+        abbr:hover{
+            cursor: help;
+        }
+    </style>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1><abbr title="String Template">Modelo de String</abbr> com <abbr title="JavaScript">JS</abbr></h1>
+
+    <div class="cx">
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <p id="demo5"></p>
+        <p id="demo6"></p>
+    </div>
+
+    <script>
+
+        let txt = `Esse texto usa acento ao avesso, back-ticks`;
+        document.getElementById('demo1').innerHTML = txt;
+
+        let tempTipes = [`Template Literals`,
+        "Template Strings",
+        "String Templates",
+        "Back-tics Syntax"];
+        /* String Interpolation */
+        let txt2 = `Sinonimos:`
+        for (const x of tempTipes) {
+            txt2 += x;
+        }
+        // ${tempTipes[0]}, ${tempTipes[1]}, ${tempTipes[2]}, ${tempTipes[3]};
+        document.getElementById('demo2').innerHTML = txt2;
+
+        let preco = 10;
+        let VAT = 0.25;
+        let total = `Total: ${(preco * (1 + VAT)).toFixed(2)}`;
+        document.getElementById('demo3').innerHTML = total;
+
+        let header = "Templates Literals";
+        let tags = ["template literals", "javascript", "es6"];
+        let html = `<h2>${header}</h2><ul>`;
+        for (const x of tags) {
+            html += `<li>${x}</li>`;
+        }
+        html += `</ul>`;
+        document.getElementById('demo4').innerHTML = html;
+
+    </script>
+</body>
+</html>
