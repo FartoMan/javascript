@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers</title>
+    <style>
+        .cx {
+            width: 300px;
+            float: left;
+            border: 1px solid black;
+            padding: 3px;
+            margin: 0 3px;
+        }
+
+        abbr:hover{
+            cursor: help;
+        }
+    </style>
+</head>
+<iframe src="../header.html" frameborder="0" style="height: 180px; width: 100%;"></iframe>
+<body>
+    <h1><abbr title="Numbers">Números</abbr> em <abbr title="JavaScript">JS</abbr></h1>
+
+    <div class="cx">
+        <abbr title="x = 3; y = 3.41">
+            <p id="demo1"></p>
+        </abbr>
+        <abbr title="a = 123e5; b = 123e-5; Notação científica">
+            <p id="demo2"></p>
+        </abbr>
+        <abbr title="9 15 vezes / 9 16 vezes">
+            <p id="demo3"></p>
+        </abbr>
+        <abbr title="e = 0.2 + 0.1; f = (0.2*10 + 0.1*10)/10;">
+            <p id="demo4"></p>
+        </abbr>
+        <abbr title="Concatenação de string e number">
+            <p id="demo5"></p>
+        </abbr>
+        <abbr title="Operações com strings numéricas">
+            <p id="demo6"></p>
+        </abbr>
+        <abbr title="m = 'maçã'; n = 3; p = m/n; innerHTML = p + ' ' + isNaN(p); -> Not a Number">
+            <p id="demo7"></p>
+        </abbr>
+    </div>
+
+    <div class="cx">
+        <abbr title="while(myNumber != Infinity) {...} + typeof(Infinity);">
+            <p id="demo8"></p>
+        </abbr>
+        <abbr title="Hexadecimal">
+            <p id="demo9"></p>
+        </abbr>
+        <abbr title="Números precedidos por 0x interpretados como Hexadecimal">
+            <p id="demo10"></p>
+        </abbr>
+    </div>
+    
+    <div class="cx">
+        <abbr title="Numero como objeto">
+            <p id="demo11"></p>
+        </abbr>
+    </div>
+    
+    <script>
+        let x = 3; // Número
+        let y = 3.41; // Número com decimal
+        document.getElementById('demo1').innerHTML =
+        x + " | " + y; // Com e sem decimal
+
+        let a = 123e5; // Notação cientifica
+        let b = 123e-5; // Notação científica
+        document.getElementById('demo2').innerHTML =
+        a + " | " + b;
+
+        let c = 999999999999999; // 15 dígitos
+        let d = 9999999999999999; // 16 dígitos
+        document.getElementById('demo3').innerHTML =
+        c + "<br>" + d; // d arredonda
+
+        let e = 0.2 + 0.1;
+        let f = (0.2*10 + 0.1*10)/10;
+        document.getElementById('demo4').innerHTML =
+        e + "<br>" + f;
+
+        let g = 10; // Number
+        let ge = "10"; // String
+        let h = 20;
+        let aga = "20";
+        let gh = g + h; // Soma
+        let geaga = ge + aga; // Concatena
+        document.getElementById('demo5').innerHTML =
+        gh + " " + geaga + "<br>" +
+        g + ge + "<br>" + // Concatena numero e string
+        g + h + aga; // Concatena pois já virou string
+
+        // JS tenta fazer operações com strings numéricas
+        document.getElementById('demo6').innerHTML =
+        ge - aga + " " + // subtrai
+        aga / ge + " " + // divide
+        ge * aga + " " + // multiplica
+        aga + ge + " " + // concatena (o + concatena strings)
+        gh;
+
+        let m = "maçã";
+        let n = 3;
+        let p = m / n;
+        document.getElementById('demo7').innerHTML =
+        p + " " + // NaN -> Not a Number
+        isNaN(p); // Boolean
+
+        let myNumber = 2000000;
+        let txt = "";
+        while (myNumber != Infinity) {
+            myNumber = myNumber * myNumber;
+            txt = txt + myNumber + "<br>";
+        }
+        document.getElementById('demo8').innerHTML =
+        txt + " " + typeof(Infinity);
+
+        let q = 0xFF;
+        document.getElementById('demo9').innerHTML =
+        "0xFF = " + q;
+
+        let myNumber2 = 32;
+        document.getElementById('demo10').innerHTML =
+        "Decimal 32 = " + "<br><br>" +
+
+        "Hexatrigesimal (base 36): " + myNumber2.toString(36) + "<br>" +
+        "Duotrigesimal (base 32): " + myNumber2.toString(32) + "<br>" +
+        "Hexadecimal (base 16): " + myNumber2.toString(16) + "<br>" +
+        "Duodesimal (base 12): " + myNumber2.toString(12) + "<br>" +
+        "Desimal (base 10): " + myNumber2.toString(10) + "<br>" +
+        "Octal (base 8): " + myNumber2.toString(8) + "<br>" +
+        "Binary (base 2): " + myNumber2.toString(2);
+
+        let nume = 123; // Number
+        let numer = new Number(123); // Obeject (não recomenda)
+        document.getElementById('demo11').innerHTML =
+        numer + " " + (nume == numer) + " " + (nume === numer);
+
+    </script>
+</body>
+</html>
