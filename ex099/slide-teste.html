@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide com várias imagens</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Para posicionar a setas de navegação dentro do conatiner de imagens*/
+        .container {
+            position: relative;
+            background-color: black;
+        }
+
+        /* Deixar os Slides escondidos por padrão, serão carregados pelo JS */
+        .mySlides {
+            margin: auto;
+            display: none;
+        }
+
+        /* Mudar o ponteiro do mouse para o dedinho quando passar sobre as miniaturas (thumbnail) */
+        .cursor {
+            cursor: pointer;
+        }
+
+        /* Botões de Anterior e Próxima */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0; /* Configuração do botão Anterior */
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Deixar o botão Próximo na direira e estilo da borda */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* Ao passar o mouse sobre os botões Anterior e Próximo, mudar a cor de fundo do botão */
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, .8);
+        }
+
+        /* Texto do número da imagem */
+        .numberText {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* Container com o nome de cada imagem */
+        .caption-coniner {
+            text-align: center;
+            background-color: #222;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Nove Colunas, lado a lado */
+        .column {
+            float: left;
+            width: 16.66%;
+        }
+
+        /* Transparência nas miniaturas */
+        .demo {
+            opacity: 0.6;
+        }
+
+        .active, .demo:hover {
+            opacity: 1;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Teste de Slide com Várias Imagens</h1>
+
+    <div class="container"> <!-- Container da galeria -->
+
+        <!-- Container das imagens FULL -->
+        <div class="mySlides">
+            <div class="numberText">1 / 9</div>
+            <img src="images/full/IMG_4359.jpg" style="width: 100%" alt="Oh Trem Blues">
+        </div>
+
+        <div class="mySlides">
+            <div class="numberText">2 / 9</div>
+            <img src="images/full/IMG_4403.jpg" style="width: 100%" alt="Oh Trem Blues">
+        </div>
+
+        <div class="mySlides">
+            <div class="numberText">3 / 9</div>
+            <img src="images/full/IMG_4407.jpg" style="width: 100%" alt="Oh Trem Blues">
+        </div>
+
+        <div class="mySlides">
+            <div class="numberText">4 / 9</div>
+            <img src="images/full/IMG_4463.jpg" style="width: 100%" alt="Oh Trem Blues">
+        </div>
+
+        <div class="mySlides">
+            <div class="numberText">5 / 9</div>
+            <img src="images/full/IMG_4548.jpg" style="width: 100%" alt="Oh Trem Blues">
+        </div>
+
+        <div class="mySlides">
+            <div class="numberText">6 / 9</div>
+            <img src="images/full/IMG_4572.jpg" styel="width: 100%" alt="Oh Trem Blues">
+        </div>
+
+        <div class="mySlides">
+            <div class="numberText">7 / 9</div>
+            <img src="images/full/IMG_4576.jpg" style="width: 100%" alt="Oh Trem Blues">
+        </div>
+
+        <div class="mySlides">
+            <div class="numberText">8 / 9</div>
+            <img src="images/full/IMG_4629.jpg" style="width: 100%" alt="Oh Trem Blues">
+        </div>
+
+        <div class="mySlides">
+            <div class="numberText">9 / 9</div>
+            <img src="images/full/IMG_4661.jpg" style="width: 100%" alt="Oh Trem Blues">
+        </div>
+
+        <!-- Botões de anterior e próxima (dentro da imagem) -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <!-- Legenda da imagem -->
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <!-- Thumbnails (imagens pequenas) -->
+        <div class="row">
+            <div class="column">
+                <img class="demo cursor" src="images/thumbnail/IMG_4359.jpg" style="width: 100%" onclick="currentSlide(1)" alt="Oh Trem Blues">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="images/thumbnail/IMG_4403.jpg" style="width: 100%" onclick="currentSlide(2)" alt="Oh Trem Blues">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="images/thumbnail/IMG_4407.jpg" style="width: 100%" onclick="currentSlide(3)" alt="Oh Trem Blues">
+            </div>            
+            <div class="column">
+                <img class="demo cursor" src="images/thumbnail/IMG_4463.jpg" style="width: 100%" onclick="currentSlide(4)" alt="Oh Trem Blues">
+            </div>            
+            <div class="column">
+                <img class="demo cursor" src="images/thumbnail/IMG_4548.jpg" style="width: 100%" onclick="currentSlide(5)" alt="Oh Trem Blues">
+            </div>            
+            <div class="column">
+                <img class="demo cursor" src="images/thumbnail/IMG_4572.jpg" style="width: 100%" onclick="currentSlide(6)" alt="Oh Trem Blues">
+            </div>            
+            <div class="column">
+                <img class="demo cursor" src="images/thumbnail/IMG_4576.jpg" style="width: 100%" onclick="currentSlide(7)" alt="Oh Trem Blues">
+            </div>            
+            <div class="column">
+                <img class="demo cursor" src="images/thumbnail/IMG_4629.jpg" style="width: 100%" onclick="currentSlide(8)" alt="Oh Trem Blues">
+            </div>            
+            <div class="column">
+                <img class="demo cursor" src="images/thumbnail/IMG_4661.jpg" style="width: 100%" onclick="currentSlide(9)" alt="Oh Trem Blues">
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Controle dos botões Anterior e Próximo
+        function plusSlides(n) {
+            showSlides(slideIndex += 1);
+        }
+
+        // Controle das Miniaturas (Thumbanails)
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementsByClassName("caption");
+            if (n > slides.length) {slideIndex = 1} // Ao chegar na última, voltar para a primeira
+            if (n < 1) {slideIndex = slides.length} // Ao chagar na primeira, ir para a última
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "")
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+
+    </script>
+</body>
+</html>
